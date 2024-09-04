@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            color: #fff;
+            background:linear-gradient(blue,yellow);
+            width: 100%;
+            height: 100vh;
+        }
+        li{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+       <!-- HEADING OF THE  PAGE -->
+    <h1>AppendChild in JAVASCRIPT   Project </h1>
+        <!--  PROJECT NAME -->
+    <h2>Quick List Builder  </h2>
+         
+       <!-- HTML CONTENT  SATGE = 2 -->
+    <div class="container">
+        <label for="input">Please Enter Your list Items
+            <input  id="InputContainer"  type="text"  placeholder="Enter Your Product Name"  required autofocus>
+
+
+            <button id="ButtonContainer" >ADD MORE</button>
+
+            <ol id="orderList"> </ol>
+    </div>
+  
+                                  <!--  STAGE = 2 -->
+            <script>
+                // pointing the dom 
+                const InputContainer   = document.querySelector('#InputContainer');
+                const ButtonContainer  = document.querySelector('#ButtonContainer');
+                const orderList        = document.querySelector('#orderList');
+
+                //                STAGE =    3
+                ButtonContainer.addEventListener('click', function(){
+                    const ProductName = InputContainer.value.trim();
+                                   
+                                //   STAGE  = 4 
+                    if(ProductName){
+                        const newProductName = document.createElement('li');
+                              newProductName.textContent = ProductName; 
+                                    
+                                //    STAGE = 5  APPENDCHILD
+                              orderList.appendChild(newProductName);
+ 
+                            //   FINALLY WE ARE CLEARING THE INPUT BOX ELEMENT BY THIS  VALUE
+                              InputContainer.value = ''; 
+
+                              
+                    }
+                });
+
+                </Script>
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild</title>
+</head>
+<body>
+    <!-- Step 1: Setting Up the HTML (The Ingredients) -->
+
+    <input id="inputElement"   type="text"  placeholder="Enter your product Name" required autofocus >
+ 
+    <button id="ButtonElement"> ADD MORE </button>
+         
+    <ul id="un_orderList"></ul>
+
+    <script>
+        // Step 2: Getting Ready to Use JavaScript 
+        // (Getting the Tools)
+            //   pointing to do some perform actions
+        const  inputElement   = document.querySelector('#inputElement');
+        const  ButtonElement  = document.querySelector('#ButtonElement');
+        const  un_orderList    = document.querySelector('#un_orderList')
+         
+
+    // Step 3: Making the Button Work (Mixing the Ingredients)
+   //  This is like saying, "When you click the button, do these steps."
+        ButtonElement.addEventListener('click', function(){
+       
+          const  productItem = inputElement.value.trim();
+           // :This grabs what you typed in the INPUT box
+       // and cleans up any extra spaces around it.
+            
+       if(productItem) {
+
+        const newProductItem = document.createElement('li');
+               newProductItem.textContent = productItem;
+
+               un_orderList.appendChild(newProductItem);
+
+               inputElement.value = '';
+
+
+
+
+       }
+            
+        })
+    </script>
+</body>
+</html>

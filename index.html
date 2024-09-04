@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS AppendChild</title>
+</head>
+<body>
+
+
+    <h1>AppendChild-In-JavaScript</h1>
+       <!--  -->
+    <label for="input">Please Enter Your Item Name 
+        <input type="text" name="productList" id="InputContainer" placeholder="Enter Your Product Name" required autofocus>
+    </label>
+    <!--  -->
+    <button id="btnContainer">ADD-MORE</button>
+    <!--  -->
+    <ol id="orderList"></ol>
+      
+    <script>
+        // 
+        const InputContainer   = document.querySelector('#InputContainer');
+        const btnContainer     = document.querySelector('#btnContainer');
+        const orderList        = document.querySelector('#orderList');
+        // 
+        btnContainer.addEventListener('click', function() {
+            const ProductList = InputContainer.value;
+            
+            if(ProductList.trim()){
+                const ProductList = document.createElement('li');
+                       NewProductList = ProductList  ;
+
+                       InputContainer.appendChild(orderList);
+
+                       InputContainer.value = '' ;
+            }
+        })
+    </script>
+     
+</body>
+</html>
